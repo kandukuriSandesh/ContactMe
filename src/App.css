@@ -10,7 +10,8 @@ grid-template-columns: 100% ;
 justify-content: space-between;
 grid-gap: 40px;
 margin: auto;
-
+background-color: rgb(228, 224, 224);
+padding: 10px;
 }
 .div-item{
   display: flex;
@@ -36,7 +37,7 @@ margin-top: 25px;
   width: 300px;
 }
 .h1-title{
-  background-color: rgb(121, 121, 219);
+  background-color: rgb(122, 122, 122);
   color: azure;
   border-top-right-radius: 50px;
   border-bottom-left-radius: 50px;
@@ -51,9 +52,21 @@ border-radius: 4px;
 border-color: antiquewhite;
 background: rgb(255,255,255);
 background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(252,252,252,1) 51%, rgba(228,211,211,1) 100%);
-font-weight: bolder;
+font-weight: bold;
+margin-left: 30%;
+font-family:'Times New Roman', Times, serif;
+font-style: italic;
+font-display:unset;
+font-size: large;
 
 }
 
+button:hover{
+  background: rgb(247,241,241);
+background: radial-gradient(circle, rgba(247,241,241,1) 0%, rgba(255,255,255,1) 13%, rgba(228,211,211,1) 100%);
 
+}
 
+body{
+  background-color: rgb(228, 224, 224);
+}
