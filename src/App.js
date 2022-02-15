@@ -10,7 +10,7 @@ function App() {
     subject: "",
     email: "",
     message: "",
-    width:""
+    width:"1000"
   });
 
 useEffect(async () => {
@@ -31,33 +31,45 @@ useEffect(async () => {
   const clickHandler = async (e) => {
     e.preventDefault();
     let obj = {};
+   
     for (let i = 0; i < e.target.length - 1; i++) {
-      if (!e.target[i].value === "") {
+      if (e.target[i].value !== "") {
         obj[e.target[i].name] = e.target[i].value;
         setfirst(obj);
+       
+      
+         if(i + 1 === e.target.length - 1){
+          emailJS(e);
+           alert("Success...!Your Message is Submitted to Sandesh")
 
-        emailjs
-          .sendForm(
-            "service_6oj3tf7",
-            "template_2jr0pnm",
-            e.target,
-            "user_ZPmjUFgcaXqApHlnGd3jg"
-          )
-          .then(
-            (result) => {
-              console.log(result.text);
-            },
-            (error) => {
-              console.log(error.text);
-            }
-          );
+         }
       } else {
         alert(`${e.target[i].name} cannot be Empty`);
         break;
       }
       
     }
+   
   };
+
+  const emailJS = (e) => {
+    emailjs
+    .sendForm(
+      "service_6oj3tf7",
+      "template_2jr0pnm",
+      e.target,
+      "user_ZPmjUFgcaXqApHlnGd3jg"
+    )
+    .then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+
+  }
   
   return (
 
